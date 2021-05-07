@@ -22,7 +22,7 @@ namespace Skandisoft.KeyInsight.Sources
             var curSettings = config.Build();
 
             // if you are experiencing issues authenticating, 
-            // try relogging visual studio  
+            // try relogging visual studio
             // that should solve the problem
             var creds = new AzureCliCredential();
 
