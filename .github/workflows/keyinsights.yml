@@ -17,13 +17,15 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@main
       - name: Setup dotnet v. ${{ env.DOTNET_VERSION }}
-        uses: action/setup-dotnet@v1
+        uses:  actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
+
       - name: Build project
         shell: bash
         working-directory: ${{ env.FUNCTION_APP_PATH }}
         run: dotnet build --configuration Release --output ./output
+
       - name: Deploy function app
         uses: Azure/functions-action@v1
         with: 
