@@ -7,7 +7,7 @@ on:
 
 env:
   FUNCTION_APP: func-keyinsight
-  FUNCTION_APP_PATH: '.'    
+  FUNCTION_APP_PATH: 'Solutions/Skandisoft.KeyInsight/'    
   DOTNET_VERSION: '3.1.x'   
 
 jobs: 
