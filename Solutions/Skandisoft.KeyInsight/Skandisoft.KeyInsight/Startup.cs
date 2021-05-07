@@ -21,10 +21,11 @@ namespace Skandisoft.KeyInsight.Sources
             var config = builder.ConfigurationBuilder;
             var curSettings = config.Build();
 
-            // if you are experiencing issues authenticating, 
-            // try relogging visual studio 
-            // that should solve the problem
+#if DEBUG
             var creds = new AzureCliCredential();
+#else
+            var creds = new DefaultAzureCredential();
+#endif
 
             config.AddAzureKeyVault(new Uri(curSettings["KeyVaultUrl"]), creds);
             config.AddAzureAppConfiguration(curSettings["AppConfigConnectionString"]);
